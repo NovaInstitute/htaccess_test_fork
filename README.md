@@ -10,6 +10,7 @@ This repository provides a complete testing setup for Apache `.htaccess` content
 - **Claimont** (Claimont Ontology)
 - **ImpactOnt** (Impact Ontology)
 - **InfoComm** (Information Communication Ontology)
+- **MethOnt** (Methodology Ontology)
 
 Each ontology has its own `.htaccess` file that implements W3C best practices for content negotiation, serving different formats (HTML, JSON-LD, Turtle, RDF/XML) based on HTTP Accept headers.
 
@@ -113,6 +114,22 @@ curl -L -H "Accept: text/turtle" https://yourdomain.com/infocomm
 curl -L -H "Accept: text/html" https://yourdomain.com/infocomm
 ```
 
+
+#### MethOnt Ontology (`/methont`)
+
+```bash
+# JSON-LD format
+curl -L -H "Accept: application/ld+json" https://yourdomain.com/methont
+
+# Turtle format
+curl -L -H "Accept: text/turtle" https://yourdomain.com/methont
+
+# RDF/XML format
+curl -L -H "Accept: application/rdf+xml" https://yourdomain.com/methont
+
+# HTML format
+curl -L -H "Accept: text/html" https://yourdomain.com/methont
+```
 ### Test Versioned URLs
 
 Each ontology supports versioned URLs (replace `v1.0.0` with actual version):
@@ -133,6 +150,7 @@ Open your browser and visit:
 - `https://yourdomain.com/claimont` - Should redirect to HTML documentation
 - `https://yourdomain.com/impactont` - Should redirect to HTML documentation
 - `https://yourdomain.com/infocomm` - Should redirect to HTML documentation
+- `https://yourdomain.com/methont` - Should redirect to HTML documentation
 
 ## Debugging
 
@@ -184,7 +202,9 @@ curl -I -H "Accept: application/ld+json" https://yourdomain.com/aiao
 │   └── .htaccess
 ├── impactont/              # Impact ontology rules
 │   └── .htaccess
-└── infocomm/               # InfoComm ontology rules
+├── infocomm/               # InfoComm ontology rules
+│   └── .htaccess
+└── methont/                # MethOnt ontology rules
     └── .htaccess
 ```
 
@@ -227,3 +247,7 @@ This setup is suitable for production use. The `.htaccess` files redirect to CDN
 ### Support
 
 For issues related to specific ontology `.htaccess` configurations, please refer to the individual ontology repositories.
+
+
+
+

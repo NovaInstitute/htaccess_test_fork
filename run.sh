@@ -14,5 +14,6 @@
      -v $(pwd)/claimont:/usr/local/apache2/htdocs/claimont \
      -v $(pwd)/impactont:/usr/local/apache2/htdocs/impactont \
      -v $(pwd)/infocomm:/usr/local/apache2/htdocs/infocomm \
+     -v $(pwd)/methont:/usr/local/apache2/htdocs/methont \
      -v /etc/letsencrypt:/etc/letsencrypt:ro \
      --name my-apache htaccess_test
